@@ -492,8 +492,8 @@ with tabs[1]:
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
                     "<p style='margin:0 0 0.6rem 0;'>Following up on the note about creative attribution.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>RemoteState went from zero GTM infrastructure to $180K ARR in 6 months. The first thing we fixed was knowing which campaigns were driving pipeline versus burning budget. Everything else followed from that.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Case study is here if useful: {{case_study_link}}</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Ancient Remedies went from unprofitable paid social to $1M+ in ad spend at a 1.8x blended ROAS — 20,000+ purchases at a $45 cost per purchase. The first thing we fixed was making the creative engine repeatable, not just running one-off ads. Everything else followed from that.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Case study here if useful: {{case_study_link}}</p>"
                     "<p style='margin:0;'>Happy to show you what that first 30 days looks like for {{company}}.</p>"
                 ),
             ),
