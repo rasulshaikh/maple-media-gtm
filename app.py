@@ -297,13 +297,20 @@ with st.sidebar:
     st.markdown("**$10,000 / QUARTER**")
     st.markdown("*(recommended)*")
     st.markdown("---")
-    st.markdown("**CASE STUDIES**")
+    st.markdown("**MY CASE STUDIES**")
     st.markdown("REMOTESTATE")
     st.markdown("$180K ARR / 6 MONTHS")
     st.markdown("FALCONWISE")
     st.markdown("10+ SQLS/MO, 30% ENGAGE")
     st.markdown("OMNIBOUND AI")
     st.markdown("1.5%+ REPLY, 300+ MAILBOXES")
+    st.markdown("---")
+    st.markdown("**MAPLE MEDIA PROOF**")
+    st.markdown("$250M+ REVENUE")
+    st.markdown("150+ BRANDS")
+    st.markdown("07 PUBLIC CASES")
+    st.markdown("10 BLOG POSTS")
+    st.markdown("[wearemaplemedia.com](https://wearemaplemedia.com)")
     st.markdown("---")
     st.markdown("**PORTFOLIO**")
     st.markdown("[rasulshaikh.github.io/gtm-portfolio](https://rasulshaikh.github.io/gtm-portfolio/)")
@@ -318,8 +325,8 @@ st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.72re
 m1, m2, m3, m4, m5 = st.columns(5)
 for col, val, lbl in zip(
     [m1, m2, m3, m4, m5],
-    ["03", "06", "50+", "85%+", "$180K"],
-    ["CHANNELS", "SIGNAL TYPES", "SEND DOMAINS", "EMAIL COVERAGE", "ARR / 6 MONTHS"],
+    ["$250M+", "150+", "07", "16", "10"],
+    ["MAPLE REVENUE", "MAPLE BRANDS", "MAPLE CASE STUDIES", "TOOLS WIRED", "BLOG POSTS TO LINK"],
 ):
     with col:
         st.markdown(f'<div class="metric-box"><div class="metric-val">{val}</div><div class="metric-lbl">{lbl}</div></div>', unsafe_allow_html=True)
@@ -328,7 +335,14 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<div class="ph">WHAT GETS BUILT</div>', unsafe_allow_html=True)
 st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.85rem;line-height:1.85;color:#000;max-width:72ch;">A three-layer GTM engine that runs continuously and compounds over time. Not a campaign — a system. Every layer feeds the next: intelligence drives outreach, outreach generates data, data sharpens targeting. After 60 days the system knows exactly which DTC founder profile, at which growth stage, responding to which signal, converts. That intelligence lives in HubSpot — not in a spreadsheet.</p>', unsafe_allow_html=True)
 
-tabs = st.tabs(["01 INTELLIGENCE", "02 OUTBOUND", "03 ATTRIBUTION", "04 TOOL STACK", "05 PORTFOLIO WIRING"])
+tabs = st.tabs([
+    "01 INTELLIGENCE",
+    "02 OUTBOUND",
+    "03 ATTRIBUTION",
+    "04 TOOL STACK",
+    "05 MAPLE MEDIA FIT",
+    "06 PORTFOLIO WIRING",
+])
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 01 INTELLIGENCE
@@ -657,9 +671,108 @@ with tabs[3]:
         st.markdown("<hr style='margin:0.2rem 0;border:none;border-top:1px solid #ddd;'>", unsafe_allow_html=True)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 05 PORTFOLIO WIRING
+# 05 MAPLE MEDIA FIT — THEIR CUSTOMERS, THEIR SYSTEM, THEIR CONTENT
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tabs[4]:
+    st.markdown('<div class="ph">MAPLE MEDIA FIT — WHY THIS PLAN WORKS FOR YOU SPECIFICALLY</div>', unsafe_allow_html=True)
+    st.markdown("*This engine is reverse-engineered from your actual customer base, your own creative system, and the content you already have live. Every outreach references proof that exists on your site today.*")
+
+    # ── YOUR SYSTEM ──
+    st.markdown("### HOW YOUR SYSTEM WORKS")
+    st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.78rem;color:#000;line-height:1.7;margin:0.4rem 0;">Your repeatable creative engine: <strong>Research → Concept → Structured Planning → Scalable Iteration</strong>. Skipping steps kills performance — you don\'t skip steps. 50+ ad concepts per brand per month. $250M+ revenue driven across 150+ brands.</p>', unsafe_allow_html=True)
+    st.markdown("""
+<div class="wiring">RESEARCH → CONCEPT → STRUCTURED PLANNING → SCALABLE ITERATION → TESTING → WINNING ANGLE EXTRAPOLATION → REPEAT</div>
+""", unsafe_allow_html=True)
+    st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;margin:0.4rem 0;"><a href="https://wearemaplemedia.com/#system" target="_blank" rel="noopener" style="color:#000;font-weight:800;">→ VIEW FULL SYSTEM ON YOUR SITE</a></p>', unsafe_allow_html=True)
+
+    # ── YOUR CUSTOMERS (LIVE PROOF) ──
+    st.markdown("### YOUR CUSTOMERS (LIVE PROOF)")
+    st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;color:#555;margin:0.4rem 0 0.8rem;">These 7 brands are your public case studies. I use them as named social proof in cold email P.S. lines, in Loom intros, and in LinkedIn DMs — the prospect reads their own peer set, not a generic claim.</p>', unsafe_allow_html=True)
+
+    customers = [
+        ("ANCIENT REMEDIES", "Natural healing book collection", "1.8+ ROAS", "$1M+", "20,000+", "https://wearemaplemedia.com/case-study/ancient-remedies-2-7x-roas-271-return-on-ad-spend/"),
+        ("CALLIXE", "Neck therapy traction pillow", "1.9+ ROAS", "$100K+", "1,000+", "https://wearemaplemedia.com/case-study/callixe-2-7x-roas-48-purchase-to-initiate-checkout-rate/"),
+        ("SAINT EYEWEAR", "Fit-over polarized sunglasses", "1.9+ ROAS", "$450K+", "15,000+", "https://wearemaplemedia.com/case-study/saint-eyewear-2-5x-roas-150-growth-in-new-customer-acquisition/"),
+        ("PRIMAL QUEEN", "Grass-fed beef organ supplements", "1.9+ ROAS", "$250K+", "4,000+", "https://wearemaplemedia.com/case-study/primal-queen-2x-roas-25-reduction-in-cost-per-acquisition/"),
+        ("CALVRIS", "Scalp & skin care line", "1.7+ ROAS", "$150K+", "1,000+", "https://wearemaplemedia.com/case-study/calvris-2-2x-roas-scaled-0-month-over-month/"),
+        ("JEVI SUPPLEMENTS", "Cortisol / stress supplements", "1.7+ ROAS", "$350K+", "7,000+", "https://wearemaplemedia.com/case-study/jevi-supplements-2-3x-roas-cpm-67-below-category-average/"),
+        ("CURVANI", "Plant-based booty drops", "1.6+ ROAS", "$200K+", "2,000+", "https://wearemaplemedia.com/case-study/2-2x-roas-on-200000-in-spend-for-curvani/"),
+    ]
+
+    for name, product, roas, spend, purchases, url in customers:
+        st.markdown(
+            f'<div class="card-compact" style="padding:0.7rem 0.9rem;">'
+            f'<a href="{url}" target="_blank" rel="noopener" style="font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;font-weight:800;color:#000;text-transform:uppercase;letter-spacing:0.06em;text-decoration:underline;">{name} ↗</a>'
+            f'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.7rem;color:#555;display:block;margin-top:2px;">{product}</span>'
+            f'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.7rem;color:#000;margin-top:4px;display:inline-block;"><strong>ROAS:</strong> {roas} &nbsp;·&nbsp; <strong>SPEND:</strong> {spend} &nbsp;·&nbsp; <strong>PURCHASES:</strong> {purchases}</span>'
+            f'</div>',
+            unsafe_allow_html=True
+        )
+
+    # ── BLOG & INSIGHTS ──
+    st.markdown("### YOUR BLOG & INSIGHTS (LINKED IN OUTREACH)")
+    st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;color:#555;margin:0.4rem 0 0.8rem;">These 10 posts are your proof of thought leadership. I link the relevant one in the cold email P.S. based on the prospect\'s category — the prospect reads your framework, not mine.</p>', unsafe_allow_html=True)
+
+    blog_posts = [
+        ("From $100K to $1M Monthly Spend: A Creative Strategy Roadmap", "The DTC Playbook", "https://wearemaplemedia.com/the-dtc-playbook/from-100k-to-1m-monthly-spend-a-creative-strategy-roadmap/"),
+        ("The DTC Playbook for 2026: What Works When Everything Changed", "The DTC Playbook", "https://wearemaplemedia.com/the-dtc-playbook/the-dtc-playbook-for-2026-what-works-when-everything-changed/"),
+        ("The Avatar-First Approach: Why Customer Research Is Your Real Creative Advantage", "The Creative Lab", "https://wearemaplemedia.com/the-creative-lab/the-avatar-first-approach-why-customer-research-is-your-real-creative-advantage/"),
+        ("Inside the Maple Media Creative Lab: How We Generate 50+ Ad Concepts Per Brand Per Month", "The Creative Lab", "https://wearemaplemedia.com/the-creative-lab/inside-the-maple-media-creative-lab-how-we-generate-50-ad-concepts-per-brand-per-month/"),
+        ("The Anatomy of a Winning Meta Ad: Seven Patterns From Eight-Figure Spend", "Performance Creative", "https://wearemaplemedia.com/performance-creative/the-anatomy-of-a-winning-meta-ad-seven-patterns-from-eight-figure-spend/"),
+        ("Why Most Performance Creative Fails (and the Framework That Actually Works)", "Performance Creative", "https://wearemaplemedia.com/performance-creative/why-most-performance-creative-fails-and-the-framework-that-actually-works/"),
+        ("How to Build a Profitable Acquisition Engine in a Privacy-First World", "Growth Strategy", "https://wearemaplemedia.com/growth-strategy/how-to-build-a-profitable-acquisition-engine-in-a-privacy-first-world/"),
+        ("The 90-Day Creative Velocity System for Scaling DTC Brands", "Growth Strategy", "https://wearemaplemedia.com/growth-strategy/the-90-day-creative-velocity-system-for-scaling-dtc-brands/"),
+        ("The Agency Model Is Broken. Here's What Maple Media Is Building Instead.", "Founder's Notes", "https://wearemaplemedia.com/founders-notes/the-agency-model-is-broken-heres-what-maple-media-is-building-instead/"),
+        ("Why We Built Maple Media Around Creative Velocity, Not Creative Vanity", "Founder's Notes", "https://wearemaplemedia.com/founders-notes/why-we-built-maple-media-around-creative-velocity-not-creative-vanity/"),
+    ]
+
+    for title, category, url in blog_posts:
+        st.markdown(
+            f'<div class="card-compact" style="padding:0.5rem 0.8rem;">'
+            f'<a href="{url}" target="_blank" rel="noopener" style="font-family:\'JetBrains Mono\',monospace;font-size:0.78rem;font-weight:700;color:#000;text-decoration:underline;">{title} ↗</a>'
+            f'<span class="badge-outline" style="margin-left:8px;font-size:0.55rem;padding:1px 5px;">{category}</span>'
+            f'</div>',
+            unsafe_allow_html=True
+        )
+
+    # ── VIDEO / YOUTUBE ──
+    st.markdown("### VIDEO / YOUTUBE")
+    st.markdown(
+        f'<div class="card-compact" style="padding:0.7rem 0.9rem;">'
+        f'<a href="https://www.youtube.com/@maplemediallc" target="_blank" rel="noopener" style="font-family:\'JetBrains Mono\',monospace;font-size:0.85rem;font-weight:800;color:#000;text-decoration:underline;">MAPLE MEDIA YOUTUBE CHANNEL ↗</a>'
+        f'<span style="font-family:\'JetBrains Mono\',monospace;font-size:0.7rem;color:#555;display:block;margin-top:4px;">@maplemediallc — channel live, video library being built out. Linked in the Loom script intro and the cold email P.S. once you have 2-3 flagship videos.</span>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
+
+    # ── OUTREACH WIRING (HOW I USE YOUR CONTENT) ──
+    st.markdown("### HOW THIS CONTENT WIRES INTO OUTREACH")
+    st.markdown("""
+<div class="wiring" style="line-height:1.9;">
+COLD EMAIL E1 (SIGNAL-LED) — OPENS WITH A {{case_study}} PEER REFERENCE → P.S. LINKS A RELEVANT BLOG POST BY CATEGORY<br>
+COLD EMAIL FU-01 (DAY 5) — DROPS THE {{case_study_link}} THAT MAPS TO THE PROSPECT'S CATEGORY<br>
+LINKEDIN DM — USES THE PROSPECT'S POST TOPIC TO PIVOT INTO THE RELEVANT BLOG POST (NOT A GENERIC LINK)<br>
+LOOM SCRIPT — OPENS WITH "I PULLED YOUR SITE + READ YOUR CREATIVE LAB POST" → NAMES 2 CASE STUDIES IN THE P.S.<br>
+FOLLOW-UP EMAIL — REPLACES "VIEW CASE STUDIES" WITH A DIRECT CATEGORY-MATCHED CASE STUDY LINK
+</div>
+""", unsafe_allow_html=True)
+
+    # ── PROOF LINE (for the email P.S.) ──
+    st.markdown("### PROOF LINE FOR THE EMAIL P.S.")
+    st.markdown(
+        f'<div style="border:2px solid #000;background:#FFF;padding:1rem 1.2rem;'
+        f'box-shadow:4px 4px 0 0 #000;margin:0.4rem 0 1.2rem;font-family:\'JetBrains Mono\',monospace;'
+        f'font-size:0.82rem;line-height:1.55;color:#000;opacity:1;">'
+        f'<p style="margin:0 0 0.6rem 0;">P.S. — 7 DTC brands (Ancient Remedies, Callixe, SAINT Eyewear, Primal Queen, Calvris, Jevi, Curvani) saw 1.6–2.7x ROAS on $1.5M+ in combined ad spend. Full case studies here: <a href="https://wearemaplemedia.com/case-studies/" target="_blank" rel="noopener" style="color:#000;">wearemaplemedia.com/case-studies</a></p>'
+        f'<p style="margin:0;">P.P.S. — your Creative Lab breakdown on the avatar-first approach is the closest thing to what I\'d build for {{company}}: <a href="https://wearemaplemedia.com/the-creative-lab/the-avatar-first-approach-why-customer-research-is-your-real-creative-advantage/" target="_blank" rel="noopener" style="color:#000;">read it here</a>.</p>'
+        f'</div>',
+        unsafe_allow_html=True
+    )
+
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+# 06 PORTFOLIO WIRING
+# ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+with tabs[5]:
     st.markdown('<div class="ph">PORTFOLIO WIRING MAP — 20 PRODUCTION WORKFLOWS</div>', unsafe_allow_html=True)
     st.markdown("Every component of this build is live on the portfolio with steps, metrics, and copy examples.")
 
