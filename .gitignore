@@ -1,0 +1,5 @@
+
+# Private send artifacts — never commit these
+*.private.md
+linkedin-*.md
+email-followup.md
