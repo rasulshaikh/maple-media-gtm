@@ -245,19 +245,28 @@ tr:nth-child(even) td { background: #f9f9f9 !important; }
 /* ── MISC ── */
 hr { border: none; border-top: 2px solid #000; margin: 1.2rem 0; }
 a { color: #000 !important; text-decoration: underline; }
-code { background: #000 !important; color: #FFF !important; font-family: 'JetBrains Mono', monospace !important; padding: 1px 5px; }
+/* inline code only (not inside pre) — for short tags like `clay` in body text */
+p code, li code, td code, span code, div:not([data-testid="stText"]):not([data-testid="stCode"]) code {
+    background: #000 !important;
+    color: #FFF !important;
+    font-family: 'JetBrains Mono', monospace !important;
+    padding: 1px 5px;
+}
 blockquote { border-left: 4px solid #000; padding: 0.5em 1em; margin: 0.8em 0; color: #000 !important; }
 
 /* ── NATIVE TEXT BLOCKS (st.text, st.code) ── */
-.stText, .stCode {
+[data-testid="stText"], [data-testid="stCode"] {
     border: 2px solid #000 !important;
     box-shadow: 4px 4px 0 0 #000 !important;
     background: #FFF !important;
     padding: 0 !important;
+    border-radius: 0 !important;
 }
-.stText pre, .stCode pre,
-.stText div[data-testid="stMarkdownContainer"] pre,
-div[data-testid="stText"] pre {
+[data-testid="stText"] pre, [data-testid="stCode"] pre,
+[data-testid="stText"] code, [data-testid="stCode"] code,
+[data-testid="stText"] p, [data-testid="stCode"] p,
+[data-testid="stText"] div, [data-testid="stCode"] div,
+[data-testid="stText"] *, [data-testid="stCode"] * {
     font-family: 'JetBrains Mono', monospace !important;
     font-size: 0.82rem !important;
     line-height: 1.85 !important;
@@ -267,23 +276,9 @@ div[data-testid="stText"] pre {
     white-space: pre-wrap !important;
     border-radius: 0 !important;
     margin: 0 !important;
-}
-div[data-testid="stText"] {
-    background: #FFF !important;
-    border: 2px solid #000 !important;
-    box-shadow: 4px 4px 0 0 #000 !important;
-}
-div[data-testid="stText"] > div,
-div[data-testid="stText"] > div > div,
-div[data-testid="stText"] p,
-div[data-testid="stText"] pre,
-div[data-testid="stText"] code {
-    font-family: 'JetBrains Mono', monospace !important;
-    color: #000 !important;
-    background: #FFF !important;
-    padding: 1rem 1.2rem !important;
-    margin: 0 !important;
-    white-space: pre-wrap !important;
+    word-wrap: break-word !important;
+    opacity: 1 !important;
+    filter: none !important;
 }
 
 footer { visibility: hidden; }
@@ -502,7 +497,15 @@ If not, no worries at all."""
         for label, subject, body in emails:
             st.markdown(f'<span class="sig-label">{label}</span>', unsafe_allow_html=True)
             st.markdown(f"**SUBJECT:** {subject}")
-            st.text(body)
+            # Inline-styled div with explicit color/background — bypasses any CSS specificity conflict
+            st.markdown(
+                f'<div style="color:#000000;background:#FFFFFF;'
+                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+                f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
+                f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
+                f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{body}</div>',
+                unsafe_allow_html=True
+            )
 
     # Channel 2
     st.markdown('<div class="ph" style="margin-top:1.5rem;">CH-02 / LINKEDIN / HEYREACH</div>', unsafe_allow_html=True)
@@ -536,7 +539,14 @@ Happy to share what's been working if that's useful."""),
         ]
         for label, body in dms:
             st.markdown(f'<span class="sig-label">{label}</span>', unsafe_allow_html=True)
-            st.text(body)
+            st.markdown(
+                f'<div style="color:#000000;background:#FFFFFF;'
+                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+                f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
+                f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
+                f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{body}</div>',
+                unsafe_allow_html=True
+            )
 
     # Channel 3
     st.markdown('<div class="ph" style="margin-top:1.5rem;">CH-03 / VIDEO / LOOM / T1 TOP 50</div>', unsafe_allow_html=True)
@@ -554,7 +564,14 @@ What I don't see is a testing framework behind it — a way to know which angles
 That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, and iteration loop. So your team can optimize from signal, not guesswork.
 
 I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for [Company] — 20 minutes, no pitch deck."""
-        st.text(loom_script)
+        st.markdown(
+            f'<div style="color:#000000;background:#FFFFFF;'
+            f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+            f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
+            f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
+            f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{loom_script}</div>',
+            unsafe_allow_html=True
+        )
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 03 ATTRIBUTION
