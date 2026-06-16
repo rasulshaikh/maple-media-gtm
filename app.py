@@ -349,8 +349,8 @@ st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.72re
 m1, m2, m3, m4, m5 = st.columns(5)
 for col, val, lbl in zip(
     [m1, m2, m3, m4, m5],
-    ["$250M+", "150+", "07", "16", "10"],
-    ["MAPLE REVENUE", "MAPLE BRANDS", "MAPLE CASE STUDIES", "TOOLS WIRED", "BLOG POSTS TO LINK"],
+    ["$250M+", "150+", "07", "15", "10"],
+    ["MAPLE REVENUE", "MAPLE BRANDS", "MAPLE CASE STUDIES", "TOOL LAYERS", "BLOG POSTS TO LINK"],
 ):
     with col:
         st.markdown(f'<div class="metric-box"><div class="metric-val">{val}</div><div class="metric-lbl">{lbl}</div></div>', unsafe_allow_html=True)
@@ -667,24 +667,36 @@ with tabs[2]:
 # 04 TOOL STACK
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tabs[3]:
-    st.markdown('<div class="ph">TOOL STACK — 16 TOOLS WIRED END TO END</div>', unsafe_allow_html=True)
+    st.markdown('<div class="ph">TOOL STACK — 15 LAYERS, SWAPPABLE PER STACK PREFERENCE</div>', unsafe_allow_html=True)
+
+    st.markdown("""
+<div style="border:2px dashed #000;padding:0.6rem 0.9rem;margin:0.4rem 0 0.9rem;background:#FFF;">
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;font-weight:800;color:#000;text-transform:uppercase;letter-spacing:0.14em;display:block;margin-bottom:0.4rem;">SWAP LEGEND (USE EITHER — SAME OUTCOME)</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#000;line-height:1.9;">
+LIST BUILDING — <strong>APOLLO</strong> OR <strong>PROSPEO</strong><br>
+SIGNAL DETECTION — <strong>TRIGIFY</strong> OR <strong>JUNGLER</strong><br>
+CRM — <strong>HUBSPOT</strong> OR <strong>ATTIO</strong><br>
+EMAIL VERIFICATION — <strong>ZEROBOUNCE</strong> OR <strong>LEADMAGIC</strong><br>
+ENRICHMENT + ANALYTICS — <strong>CLAY + DEEPLINE CLI</strong> (OR 1 OTHER)
+</span>
+</div>
+""", unsafe_allow_html=True)
 
     tools = [
-        ("LIST BUILDING",         "APOLLO",                              "ICP PULL BY TITLE, INDUSTRY, HEADCOUNT, GEO"),
-        ("ENRICHMENT",            "CLAY",                                "9-STEP ENRICHMENT TABLE, IIFE SCORING FORMULAS, CLAYGENT CUSTOM DATA"),
+        ("LIST BUILDING",         "APOLLO OR PROSPEO",                   "ICP PULL BY TITLE, INDUSTRY, HEADCOUNT, GEO"),
+        ("ENRICHMENT + ANALYTICS","CLAY + DEEPLINE CLI",                 "9-STEP ENRICHMENT TABLE + AI SCORING + OUTBOUND ANALYTICS + REPLY ATTRIBUTION"),
         ("EMAIL FINDING",         "FINDYMAIL + PROSPEO + BETTERCONTACT", "WATERFALL EMAIL DISCOVERY — 85%+ COVERAGE"),
-        ("EMAIL VERIFICATION",    "ZEROBOUNCE",                          "REMOVES INVALID + RISKY CONTACTS BEFORE SEND"),
+        ("EMAIL VERIFICATION",    "ZEROBOUNCE OR LEADMAGIC",             "REMOVES INVALID + RISKY CONTACTS BEFORE SEND"),
         ("AI SCORING",            "CLAUDE VIA CLAY",                     "0-100 LEAD SCORE, COPY HOOK GENERATION PER CONTACT"),
-        ("SIGNAL DETECTION",      "TRIGIFY",                             "JOB CHANGES, FUNDING ROUNDS, EXPANSION SIGNALS"),
-        ("TECH STACK DETECTION",  "THEIRSTACK",                          "ATTRIBUTION TOOL SWITCH, SHOPIFY / KLAVIYO / TRIPLE WHALE DETECTION"),
+        ("SIGNAL DETECTION",      "TRIGIFY OR JUNGLER",                  "JOB CHANGES, FUNDING ROUNDS, EXPANSION SIGNALS, AD ACCOUNT FLAGS"),
+        ("TECH STACK DETECTION",  "THEIRSTACK",                          "ATTRIBUTION TOOL SWITCH (TRIPLE WHALE / NORTHBEAM / ROCKERBOX / MOTION)"),
         ("WEBSITE VISITORS",      "RB2B",                                "ANONYMOUS VISITOR IDENTIFICATION POST-EMAIL"),
         ("LINKEDIN SCRAPING",     "PHANTOMBUSTER",                       "POST ENGAGERS, FOLLOWER EXPORT, PROFILE DATA"),
         ("EMAIL SEQUENCING",      "SMARTLEAD",                           "50+ DOMAIN FLEET, A/B TESTING, BOUNCE MONITORING"),
         ("LINKEDIN OUTREACH",     "HEYREACH",                            "CONNECTION REQUESTS, DM SEQUENCES, COMMENT ENGAGEMENT"),
         ("VIDEO",                 "LOOM",                                "PERSONALIZED 60-90S VIDEOS FOR T1 ACCOUNTS"),
         ("ORCHESTRATION",         "N8N",                                 "WEBHOOKS, ROUTING LOGIC, CRM SYNC, DEAD LETTER QUEUE"),
-        ("GTM ANALYTICS",         "DEEPLINE CLI",                        "OUTBOUND ANALYTICS, SEQUENCE PERFORMANCE, REPLY → MEETING ATTRIBUTION"),
-        ("CRM",                   "HUBSPOT",                             "CONTACT MANAGEMENT, DEAL CREATION, ATTRIBUTION, REPORTING"),
+        ("CRM",                   "HUBSPOT OR ATTIO",                    "CONTACT MANAGEMENT, DEAL CREATION, ATTRIBUTION, REPORTING"),
         ("ALERTS",                "SLACK",                               "REAL-TIME REPLY ALERTS, DELIVERABILITY FLAGS, WEEKLY MONDAY REPORT"),
     ]
 
