@@ -426,72 +426,72 @@ with tabs[1]:
 
     st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;color:#555;margin-top:0.5rem;">VARIANT MATRIX: E1 x 3 (SIGNAL-LED) | E2 x 2 (SOCIAL PROOF) | 10 SUBJECT LINES ROTATED BY COMPANY HASH | 80-WORD GATE ON EVERY SEND</p>', unsafe_allow_html=True)
 
+    # Merge tag legend
+    st.markdown("""
+<div style="border:2px dashed #000;padding:0.6rem 0.9rem;margin:0.5rem 0 0.9rem;background:#FFF;">
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.68rem;font-weight:800;color:#000;text-transform:uppercase;letter-spacing:0.14em;display:block;margin-bottom:0.4rem;">MERGE TAGS (SMARTLEAD / CLAY FORMAT)</span>
+<span style="font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#000;line-height:1.9;">
+{{first_name}} &nbsp; {{last_name}} &nbsp; {{company}} &nbsp; {{industry}} &nbsp; {{product_category}} &nbsp; {{funding_round}} &nbsp; {{post_topic}} &nbsp; {{department}} &nbsp; {{creative_angle}} &nbsp; {{new_hire_role}} &nbsp; {{case_study_link}}
+</span>
+</div>
+""", unsafe_allow_html=True)
+
     with st.expander("VIEW EMAIL COPY EXAMPLES"):
         emails = [
             (
                 "E-01 / NEW HEAD OF GROWTH HIRED",
-                "scaling creative at [Company] — the system behind it",
-                """Hey [First Name],
-
-Saw [Company] just brought on a head of growth. The first 90 days usually come down to one question: is the creative engine producing enough signal to know what's working, or are you still guessing?
-
-Most DTC brands at [Company]'s stage are spending on creative without a system to know which concepts drive pipeline versus impressions.
-
-Maple Media builds the repeatable engine behind that: research, structure, testing, and iteration so your head of growth can optimize from real data.
-
-3 brands in [industry] saw a measurable lift in pipeline-attributed creative within 60 days.
-
-Worth 20 minutes to see what that looks like for [Company]?"""
+                "scaling creative at {{company}} — the system behind it",
+                (
+                    "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} just brought on a head of growth. The first 90 days usually come down to one question: is the creative engine producing enough signal to know what's working, or are you still guessing?</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Most DTC brands at {{company}}'s stage are spending on creative without a system to know which concepts drive pipeline versus impressions.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media builds the repeatable engine behind that: research, structure, testing, and iteration so your head of growth can optimize from real data.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>3 brands in {{industry}} saw a measurable lift in pipeline-attributed creative within 60 days.</p>"
+                    "<p style='margin:0;'>Worth 20 minutes to see what that looks like for {{company}}?</p>"
+                ),
             ),
             (
                 "E-02 / NEGATIVE G2 / CLUTCH REVIEW",
-                "[Company] just left a review — here's what that usually means",
-                """Hey [First Name],
-
-[Company] posted a review about their last creative agency. The feedback was about consistency and results, not quality.
-
-That gap is almost always a system problem, not a talent problem. The agency was producing creative without a repeatable engine behind the testing and iteration.
-
-Maple Media's model is built the other way: research and framework first, then creative output from a structured process. Creative that compounds instead of resets every quarter.
-
-Happy to show you what that looks like in 20 minutes."""
+                "{{company}} just left a review — here's what that usually means",
+                (
+                    "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>{{company}} posted a review about their last creative agency. The feedback was about consistency and results, not quality.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>That gap is almost always a system problem, not a talent problem. The agency was producing creative without a repeatable engine behind the testing and iteration.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media's model is built the other way: research and framework first, then creative output from a structured process. Creative that compounds instead of resets every quarter.</p>"
+                    "<p style='margin:0;'>Happy to show you what that looks like in 20 minutes.</p>"
+                ),
             ),
             (
                 "E-03 / FUNDING ROUND RAISED",
                 "saw the raise — pipeline velocity matters now",
-                """Hey [First Name],
-
-Saw [Company] closed [round]. Post-raise, the pipeline target just got bigger.
-
-Most teams respond by scaling content. The ones building pipeline aren't just publishing more — they're building from the exact prompts buyers use when evaluating [category] brands.
-
-Maple Media builds from that intelligence. The result is creative that earns pipeline, not just impressions.
-
-Worth a 30-minute conversation?"""
+                (
+                    "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} closed {{funding_round}}. Post-raise, the pipeline target just got bigger.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Most teams respond by scaling content. The ones building pipeline aren't just publishing more — they're building from the exact prompts buyers use when evaluating {{product_category}} brands.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media builds from that intelligence. The result is creative that earns pipeline, not just impressions.</p>"
+                    "<p style='margin:0;'>Worth a 30-minute conversation?</p>"
+                ),
             ),
             (
                 "FU-01 / DAY 5 / CASE STUDY",
-                "re: scaling creative at [Company]",
-                """Hey [First Name],
-
-Following up on the note about creative attribution.
-
-RemoteState went from zero GTM infrastructure to $180K ARR in 6 months. The first thing we fixed was knowing which campaigns were driving pipeline versus burning budget. Everything else followed from that.
-
-Case study is here if useful: [link]
-
-Happy to show you what that first 30 days looks like for [Company]."""
+                "re: scaling creative at {{company}}",
+                (
+                    "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Following up on the note about creative attribution.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>RemoteState went from zero GTM infrastructure to $180K ARR in 6 months. The first thing we fixed was knowing which campaigns were driving pipeline versus burning budget. Everything else followed from that.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Case study is here if useful: {{case_study_link}}</p>"
+                    "<p style='margin:0;'>Happy to show you what that first 30 days looks like for {{company}}.</p>"
+                ),
             ),
             (
                 "FU-02 / DAY 14 / SOFT CLOSE",
                 "last one from me",
-                """Hey [First Name],
-
-Dropping this one last note in case the timing wasn't right earlier.
-
-If creative attribution — knowing which concepts drive pipeline versus impressions — is something you're thinking about this quarter, worth 20 minutes.
-
-If not, no worries at all."""
+                (
+                    "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Dropping this one last note in case the timing wasn't right earlier.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>If creative attribution — knowing which concepts drive pipeline versus impressions — is something you're thinking about this quarter, worth 20 minutes.</p>"
+                    "<p style='margin:0;'>If not, no worries at all.</p>"
+                ),
             ),
         ]
         for label, subject, body in emails:
@@ -500,10 +500,10 @@ If not, no worries at all."""
             # Inline-styled div with explicit color/background — bypasses any CSS specificity conflict
             st.markdown(
                 f'<div style="color:#000000;background:#FFFFFF;'
-                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.55;'
                 f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
                 f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
-                f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{body}</div>',
+                f'opacity:1;">{body}</div>',
                 unsafe_allow_html=True
             )
 
@@ -525,26 +525,26 @@ If not, no worries at all."""
     with st.expander("VIEW LINKEDIN DM EXAMPLES"):
         dms = [
             ("LI-01 / AFTER CONNECTION ACCEPTED",
-             """Hey [First Name], appreciate the connect.
-
-Saw your post on [creative testing / ROAS / scaling DTC] last week. One thing that keeps coming up with the brands I talk to at your stage: the creative is good, but there is no system behind knowing which concepts drive actual pipeline versus impressions.
-
-Curious — is that something you're solving internally right now, or still a bit of a black box?"""),
+             (
+                 "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}}, appreciate the connect.</p>"
+                 "<p style='margin:0 0 0.6rem 0;'>Saw your post on {{post_topic}} last week. One thing that keeps coming up with the brands I talk to at your stage: the creative is good, but there is no system behind knowing which concepts drive actual pipeline versus impressions.</p>"
+                 "<p style='margin:0;'>Curious — is that something you're solving internally right now, or still a bit of a black box?</p>"
+             )),
             ("LI-02 / FOLLOWER PLAY — WARM INTENT",
-             """Hey [First Name], noticed you followed — appreciate it.
-
-Looks like you're working on [growth / creative / performance] at [Company]. I've been building GTM engines for DTC brands — mostly the infrastructure behind knowing which creative actually drives pipeline.
-
-Happy to share what's been working if that's useful."""),
+             (
+                 "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}}, noticed you followed — appreciate it.</p>"
+                 "<p style='margin:0 0 0.6rem 0;'>Looks like you're working on {{department}} at {{company}}. I've been building GTM engines for DTC brands — mostly the infrastructure behind knowing which creative actually drives pipeline.</p>"
+                 "<p style='margin:0;'>Happy to share what's been working if that's useful.</p>"
+             )),
         ]
         for label, body in dms:
             st.markdown(f'<span class="sig-label">{label}</span>', unsafe_allow_html=True)
             st.markdown(
                 f'<div style="color:#000000;background:#FFFFFF;'
-                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+                f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.55;'
                 f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
                 f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
-                f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{body}</div>',
+                f'opacity:1;">{body}</div>',
                 unsafe_allow_html=True
             )
 
@@ -555,21 +555,19 @@ Happy to share what's been working if that's useful."""),
 
     with st.expander("VIEW LOOM SCRIPT"):
         st.markdown("*FORMAT: 60-90 SECONDS. SCREEN SHARE OF THEIR WEBSITE. SPECIFIC TO THEIR CREATIVE STACK.*")
-        loom_script = """Hey [First Name] — I pulled [Company]'s site before recording this.
-
-You're running [product category] creatives focused on [angle — social proof / founder story / UGC]. The creative is strong.
-
-What I don't see is a testing framework behind it — a way to know which angles are driving pipeline for your new [CMO / head of growth] in the first 90 days.
-
-That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, and iteration loop. So your team can optimize from signal, not guesswork.
-
-I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for [Company] — 20 minutes, no pitch deck."""
+        loom_script = (
+            "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}} — I pulled {{company}}'s site before recording this.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>You're running {{product_category}} creatives focused on {{creative_angle}}. The creative is strong.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>What I don't see is a testing framework behind it — a way to know which angles are driving pipeline for your new {{new_hire_role}} in the first 90 days.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, and iteration loop. So your team can optimize from signal, not guesswork.</p>"
+            "<p style='margin:0;'>I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for {{company}} — 20 minutes, no pitch deck.</p>"
+        )
         st.markdown(
             f'<div style="color:#000000;background:#FFFFFF;'
-            f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.85;'
+            f'font-family:\'JetBrains Mono\',monospace;font-size:0.82rem;line-height:1.55;'
             f'padding:1rem 1.2rem;margin:0.4rem 0 1.2rem;'
             f'border:2px solid #000000;box-shadow:4px 4px 0 0 #000000;'
-            f'white-space:pre-wrap;word-wrap:break-word;opacity:1;">{loom_script}</div>',
+            f'opacity:1;">{loom_script}</div>',
             unsafe_allow_html=True
         )
 
