@@ -349,7 +349,7 @@ st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.72re
 m1, m2, m3, m4, m5 = st.columns(5)
 for col, val, lbl in zip(
     [m1, m2, m3, m4, m5],
-    ["$250M+", "150+", "07", "15", "10"],
+    ["$250M+", "150+", "07", "16", "10"],
     ["MAPLE REVENUE", "MAPLE BRANDS", "MAPLE CASE STUDIES", "TOOL LAYERS", "BLOG POSTS TO LINK"],
 ):
     with col:
@@ -402,7 +402,7 @@ with tabs[0]:
             ("NEW CMO / HEAD OF GROWTH HIRED", "TRIGIFY + LINKEDIN", "LAST 30 DAYS"),
             ("FUNDING ROUND RAISED (SEED → SERIES B+)", "CRUNCHBASE + TRIGIFY", "LAST 30 DAYS"),
             ("ATTRIBUTION TOOL SWITCH (TRIPLE WHALE / NORTHBEAM / ROCKERBOX / MOTION)", "THEIRSTACK + TRIGIFY", "LAST 14 DAYS"),
-            ("NEGATIVE AGENCY REVIEW ON G2 / CLUTCH", "APIFY SCRAPE", "LAST 14 DAYS"),
+            ("NEGATIVE AGENCY REVIEW ON G2 / CLUTCH", "SCRAPLING / APIFY / BROWSER USE", "LAST 14 DAYS"),
             ("HIRING CREATIVE / PERFORMANCE ROLES (3+ OPEN)", "LINKEDIN JOB CHANGES", "LAST 14 DAYS"),
             ("AD ACCOUNT FLAGGED / RESTRICTED ON META / TIKTOK", "META ADS LIBRARY + SUPPORT", "LAST 7 DAYS"),
             ("NEW PRODUCT LAUNCH / SKU EXPANSION", "SHOPIFY MONITOR + LINKEDIN", "LAST 30 DAYS"),
@@ -667,7 +667,7 @@ with tabs[2]:
 # 04 TOOL STACK
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 with tabs[3]:
-    st.markdown('<div class="ph">TOOL STACK — 15 LAYERS, SWAPPABLE PER STACK PREFERENCE</div>', unsafe_allow_html=True)
+    st.markdown('<div class="ph">TOOL STACK — 16 LAYERS, SWAPPABLE PER STACK PREFERENCE</div>', unsafe_allow_html=True)
 
     st.markdown("""
 <div style="border:2px dashed #000;padding:0.6rem 0.9rem;margin:0.4rem 0 0.9rem;background:#FFF;">
@@ -677,6 +677,7 @@ LIST BUILDING — <strong>APOLLO</strong> OR <strong>PROSPEO</strong><br>
 SIGNAL DETECTION — <strong>TRIGIFY</strong> OR <strong>JUNGLER</strong><br>
 CRM — <strong>HUBSPOT</strong> OR <strong>ATTIO</strong><br>
 EMAIL VERIFICATION — <strong>ZEROBOUNCE</strong> OR <strong>LEADMAGIC</strong><br>
+VIDEO — <strong>LOOM</strong> / <strong>SENDSPARK</strong> / <strong>BLOOM</strong><br>
 ENRICHMENT + ANALYTICS — <strong>CLAY + DEEPLINE CLI</strong> (OR 1 OTHER)
 </span>
 </div>
@@ -692,9 +693,10 @@ ENRICHMENT + ANALYTICS — <strong>CLAY + DEEPLINE CLI</strong> (OR 1 OTHER)
         ("TECH STACK DETECTION",  "THEIRSTACK",                          "ATTRIBUTION TOOL SWITCH (TRIPLE WHALE / NORTHBEAM / ROCKERBOX / MOTION)"),
         ("WEBSITE VISITORS",      "RB2B",                                "ANONYMOUS VISITOR IDENTIFICATION POST-EMAIL"),
         ("LINKEDIN SCRAPING",     "PHANTOMBUSTER",                       "POST ENGAGERS, FOLLOWER EXPORT, PROFILE DATA"),
+        ("WEB / REVIEW SCRAPING", "SCRAPLING / APIFY / BROWSER USE",     "G2/CLUTCH REVIEW SCRAPE, JOB BOARD MINING, COMPANY SITE INTEL, AUTO-BROWSER"),
         ("EMAIL SEQUENCING",      "SMARTLEAD",                           "50+ DOMAIN FLEET, A/B TESTING, BOUNCE MONITORING"),
         ("LINKEDIN OUTREACH",     "HEYREACH",                            "CONNECTION REQUESTS, DM SEQUENCES, COMMENT ENGAGEMENT"),
-        ("VIDEO",                 "LOOM",                                "PERSONALIZED 60-90S VIDEOS FOR T1 ACCOUNTS"),
+        ("VIDEO",                 "LOOM / SENDSPARK / BLOOM",            "PERSONALIZED 60-90S VIDEOS FOR T1 ACCOUNTS"),
         ("ORCHESTRATION",         "N8N",                                 "WEBHOOKS, ROUTING LOGIC, CRM SYNC, DEAD LETTER QUEUE"),
         ("CRM",                   "HUBSPOT OR ATTIO",                    "CONTACT MANAGEMENT, DEAL CREATION, ATTRIBUTION, REPORTING"),
         ("ALERTS",                "SLACK",                               "REAL-TIME REPLY ALERTS, DELIVERABILITY FLAGS, WEEKLY MONDAY REPORT"),
