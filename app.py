@@ -193,12 +193,36 @@ div[data-testid="stSidebar"] h3 { color: #FFF !important; border: none; font-siz
     color: #000 !important;
     transition: none !important;
 }
-.stTabs [aria-selected="true"] {
+.stTabs [data-baseweb="tab"] * {
+    color: #000 !important;
+    background: transparent !important;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    background: #E5E5E5 !important;
+    color: #000 !important;
+}
+.stTabs [data-baseweb="tab"]:hover * {
+    color: #000 !important;
+    background: transparent !important;
+}
+/* ACTIVE TAB — black background, white text — applied to the tab AND every child */
+.stTabs [aria-selected="true"],
+.stTabs [aria-selected="true"] *,
+.stTabs [aria-selected="true"] p,
+.stTabs [aria-selected="true"] span,
+.stTabs [aria-selected="true"] div,
+.stTabs [aria-selected="true"] button {
     background: #000 !important;
     color: #FFF !important;
 }
-.stTabs [aria-selected="true"] p,
-.stTabs [aria-selected="true"] span { color: #FFF !important; }
+.stTabs [aria-selected="true"]:hover {
+    background: #000 !important;
+    color: #FFF !important;
+}
+.stTabs [aria-selected="true"]:hover * {
+    background: #000 !important;
+    color: #FFF !important;
+}
 
 /* ── EXPANDER ── */
 .stExpander {
