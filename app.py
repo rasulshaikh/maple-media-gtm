@@ -376,11 +376,15 @@ with tabs[0]:
         st.markdown("### SIGNAL STACK")
         signals = [
             ("NEW CMO / HEAD OF GROWTH HIRED", "TRIGIFY + LINKEDIN", "LAST 30 DAYS"),
-            ("FUNDING ROUND RAISED", "CRUNCHBASE + TRIGIFY", "LAST 30 DAYS"),
-            ("ATTRIBUTION TOOL SWITCH", "THEIRSTACK + TRIGIFY", "LAST 14 DAYS"),
+            ("FUNDING ROUND RAISED (SEED → SERIES B+)", "CRUNCHBASE + TRIGIFY", "LAST 30 DAYS"),
+            ("ATTRIBUTION TOOL SWITCH (TRIPLE WHALE / NORTHBEAM / ROCKERBOX / MOTION)", "THEIRSTACK + TRIGIFY", "LAST 14 DAYS"),
             ("NEGATIVE AGENCY REVIEW ON G2 / CLUTCH", "APIFY SCRAPE", "LAST 14 DAYS"),
-            ("NORTH AMERICAN MARKET EXPANSION", "LINKEDIN + CRUNCHBASE", "LAST 60 DAYS"),
-            ("LINKEDIN POST ON CREATIVE / ROAS / SCALING", "PHANTOMBUSTER", "LAST 7 DAYS"),
+            ("HIRING CREATIVE / PERFORMANCE ROLES (3+ OPEN)", "LINKEDIN JOB CHANGES", "LAST 14 DAYS"),
+            ("AD ACCOUNT FLAGGED / RESTRICTED ON META / TIKTOK", "META ADS LIBRARY + SUPPORT", "LAST 7 DAYS"),
+            ("NEW PRODUCT LAUNCH / SKU EXPANSION", "SHOPIFY MONITOR + LINKEDIN", "LAST 30 DAYS"),
+            ("iOS 18+ TRACKING / ATTRIBUTION ISSUES MENTIONED", "TECH NEWS MONITOR", "LAST 14 DAYS"),
+            ("LINKEDIN POST ON CREATIVE / ROAS / SCALING / FATIGUE", "PHANTOMBUSTER", "LAST 7 DAYS"),
+            ("NORTH AMERICAN MARKET EXPANSION (UK / EU / MENA → NA)", "LINKEDIN + CRUNCHBASE", "LAST 60 DAYS"),
         ]
         for signal, source, window in signals:
             st.markdown(f"""
@@ -427,12 +431,12 @@ with tabs[1]:
     st.markdown("**WIRING:**")
     st.markdown('<div class="wiring">CLAY SCORED LIST → PRE-SEND GATE → SMARTLEAD UPLOAD → SEQUENCE RUNS → REPLY DETECTED → N8N WEBHOOK → HUBSPOT DEAL CREATED + SLACK ALERT</div>', unsafe_allow_html=True)
 
-    st.markdown("**3 COPY ANGLES:**")
+    st.markdown("**3 COPY ANGLES — DTC-NATIVE PAIN:**")
     a1, a2, a3 = st.columns(3)
     angles = [
-        ("A1", "CREATIVE ATTRIBUTION GAP", "Spending on creative but can't prove which concepts drive pipeline vs impressions. Maple Media closes that gap with a repeatable system."),
-        ("A2", "COMPETITOR VISIBILITY", "Competitor showing up in buyer shortlists before they do. Maple Media gets them into those answers before the shortlist forms."),
-        ("A3", "NORTH AMERICAN MARKET ENTRY", "Expanding from UK / EU / MENA. Needs a creative partner who knows the NA channel dynamics, not just the product."),
+        ("A1", "ROAS PLATEAU AT SCALE", "Spend is growing but ROAS is decaying — same 5 creatives rotating, frequency caps, CPM inflation. Maple Media's engine ships 30–50 fresh concepts per month so spend can scale without ROAS dropping."),
+        ("A2", "CREATIVE VELOCITY GAP", "Brief-to-ship cycle is 3–4 weeks. Ads fatigue in 5 days. Maple Media generates 50+ concepts per brand per month with a research and testing framework behind every angle — kill-or-scale decisions in 7 days, not 30."),
+        ("A3", "ATTRIBUTION FRACTURE", "Just switched from Triple Whale to Northbeam (or iOS 18 broke their tracking). They can't tell which creative actually drove the sale. Maple Media's research-led system identifies winners in 7-day test windows — they know which concept drove the purchase, not just which ad got the click."),
     ]
     for col, (tag, title, body) in zip([a1, a2, a3], angles):
         with col:
@@ -454,14 +458,14 @@ with tabs[1]:
         emails = [
             (
                 "E-01 / NEW HEAD OF GROWTH HIRED",
-                "scaling creative at {{company}} — the system behind it",
+                "scaling creative at {{company}} — the velocity question",
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} just brought on a head of growth. The first 90 days usually come down to one question: is the creative engine producing enough signal to know what's working, or are you still guessing?</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Most DTC brands at {{company}}'s stage are spending on creative without a system to know which concepts drive pipeline versus impressions.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Maple Media builds the repeatable engine behind that: research, structure, testing, and iteration so your head of growth can optimize from real data.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>3 brands in {{industry}} saw a measurable lift in pipeline-attributed creative within 60 days.</p>"
-                    "<p style='margin:0;'>Worth 20 minutes to see what that looks like for {{company}}?</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} just brought on a head of growth. The first 90 days usually come down to one question: is the creative engine shipping 30–50 fresh concepts per month, or is the team still running 3–5 ads on rotation and watching them fatigue in 5 days?</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Most DTC brands at {{company}}'s stage are scaling ad spend on a creative engine that breaks the moment CPMs go up. Same concepts, higher frequency, ROAS decays — and the new CMO inherits the plateau.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media's model is built the other way: research-led concept generation, 30–50 fresh ads per brand per month, kill-or-scale decisions in 7-day test windows. Budget grows and ROAS holds.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>3 brands in {{industry}} just shipped 50+ concepts in their first 60 days and saw blended ROAS hold through a 3x spend increase.</p>"
+                    "<p style='margin:0;'>Worth 20 minutes to see what the first 30 days looks like for {{company}}?</p>"
                 ),
             ),
             (
@@ -470,31 +474,31 @@ with tabs[1]:
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
                     "<p style='margin:0 0 0.6rem 0;'>{{company}} posted a review about their last creative agency. The feedback was about consistency and results, not quality.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>That gap is almost always a system problem, not a talent problem. The agency was producing creative without a repeatable engine behind the testing and iteration.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Maple Media's model is built the other way: research and framework first, then creative output from a structured process. Creative that compounds instead of resets every quarter.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>That gap is almost always a system problem, not a talent problem. The agency was producing creative without a repeatable research and testing engine behind it — so every month started from zero, every winning concept burned out before the next one shipped, and ROAS drifted down quarter after quarter.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media's model is built the other way: research and concept framework first, then creative output from a structured process. 50+ concepts per brand per month, every one grounded in customer research and tested against the live ad set. Creative that compounds instead of resetting every quarter.</p>"
                     "<p style='margin:0;'>Happy to show you what that looks like in 20 minutes.</p>"
                 ),
             ),
             (
                 "E-03 / FUNDING ROUND RAISED",
-                "saw the raise — pipeline velocity matters now",
+                "saw the raise — your creative engine needs to scale with you",
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} closed {{funding_round}}. Post-raise, the pipeline target just got bigger.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Most teams respond by scaling content. The ones building pipeline aren't just publishing more — they're building from the exact prompts buyers use when evaluating {{product_category}} brands.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Maple Media builds from that intelligence. The result is creative that earns pipeline, not just impressions.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Saw {{company}} closed {{funding_round}}. Post-raise, the ad budget just got bigger — and so did the pressure on the creative engine to keep ROAS flat while spend grows 3x.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Most teams respond by scaling the same 3–5 winning creatives. That works for a month, then frequency caps, ad fatigue, and CPM inflation kick in — and ROAS drops right when the target got bigger.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Maple Media scales differently. Research-led concept generation, 30–50 fresh ads per month, kill-or-scale decisions every 7 days. Budget grows, ROAS holds. {{product_category}} brands in your stage are running this exact playbook right now.</p>"
                     "<p style='margin:0;'>Worth a 30-minute conversation?</p>"
                 ),
             ),
             (
                 "FU-01 / DAY 5 / CASE STUDY",
-                "re: scaling creative at {{company}}",
+                "re: creative velocity at {{company}}",
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Following up on the note about creative attribution.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>Ancient Remedies went from unprofitable paid social to $1M+ in ad spend at a 1.8x blended ROAS — 20,000+ purchases at a $45 cost per purchase. The first thing we fixed was making the creative engine repeatable, not just running one-off ads. Everything else followed from that.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Following up on the note about creative velocity.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>Ancient Remedies went from 3 concepts per month and unprofitable paid social to 50+ concepts per month and $1M+ in ad spend at a 1.8x blended ROAS — 20,000+ purchases at a $45 cost per purchase. The first thing we changed was the cadence and the testing framework. Everything else followed.</p>"
                     "<p style='margin:0 0 0.6rem 0;'>Case study here if useful: {{case_study_link}}</p>"
-                    "<p style='margin:0;'>Happy to show you what that first 30 days looks like for {{company}}.</p>"
+                    "<p style='margin:0;'>Happy to show you what the first 30 days looks like for {{company}}.</p>"
                 ),
             ),
             (
@@ -503,7 +507,7 @@ with tabs[1]:
                 (
                     "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}},</p>"
                     "<p style='margin:0 0 0.6rem 0;'>Dropping this one last note in case the timing wasn't right earlier.</p>"
-                    "<p style='margin:0 0 0.6rem 0;'>If creative attribution — knowing which concepts drive pipeline versus impressions — is something you're thinking about this quarter, worth 20 minutes.</p>"
+                    "<p style='margin:0 0 0.6rem 0;'>If creative velocity — shipping 30–50 fresh concepts per month and knowing which ones kill CPA in 7 days — is something you're solving this quarter, worth 20 minutes.</p>"
                     "<p style='margin:0;'>If not, no worries at all.</p>"
                 ),
             ),
@@ -541,13 +545,13 @@ with tabs[1]:
             ("LI-01 / AFTER CONNECTION ACCEPTED",
              (
                  "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}}, appreciate the connect.</p>"
-                 "<p style='margin:0 0 0.6rem 0;'>Saw your post on {{post_topic}} last week. One thing that keeps coming up with the brands I talk to at your stage: the creative is good, but there is no system behind knowing which concepts drive actual pipeline versus impressions.</p>"
-                 "<p style='margin:0;'>Curious — is that something you're solving internally right now, or still a bit of a black box?</p>"
+                 "<p style='margin:0 0 0.6rem 0;'>Saw your post on {{post_topic}} last week. One thing that keeps coming up with the DTC brands I talk to at your stage: the creative is solid, but there's no system for shipping 30–50 fresh concepts per month and knowing which ones actually hold ROAS at scale.</p>"
+                 "<p style='margin:0;'>Curious — is creative velocity something you're solving with an in-house team right now, or still mostly gut feel on what to brief next?</p>"
              )),
             ("LI-02 / FOLLOWER PLAY — WARM INTENT",
              (
                  "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}}, noticed you followed — appreciate it.</p>"
-                 "<p style='margin:0 0 0.6rem 0;'>Looks like you're working on {{department}} at {{company}}. I've been building GTM engines for DTC brands — mostly the infrastructure behind knowing which creative actually drives pipeline.</p>"
+                 "<p style='margin:0 0 0.6rem 0;'>Looks like you're working on {{department}} at {{company}}. I work with DTC brands on the creative engine behind scaling — research, concept generation, testing cadence, iteration loop. The brands I work with ship 30–50 fresh concepts per month and kill or scale each one in a 7-day test window.</p>"
                  "<p style='margin:0;'>Happy to share what's been working if that's useful.</p>"
              )),
         ]
@@ -568,13 +572,13 @@ with tabs[1]:
     st.markdown('<div class="wiring">CLAY FLAGS T1 → LOOM RECORDED PER ACCOUNT → LINKED IN EMAIL AS P.S. → LOOM WATCH EVENT → HUBSPOT DEAL UPDATE</div>', unsafe_allow_html=True)
 
     with st.expander("VIEW LOOM SCRIPT"):
-        st.markdown("*FORMAT: 60-90 SECONDS. SCREEN SHARE OF THEIR WEBSITE. SPECIFIC TO THEIR CREATIVE STACK.*")
+        st.markdown("*FORMAT: 60-90 SECONDS. SCREEN SHARE OF THEIR WEBSITE + META AD LIBRARY. SPECIFIC TO THEIR CREATIVE STACK.*")
         loom_script = (
-            "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}} — I pulled {{company}}'s site before recording this.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>Hey {{first_name}} — I pulled {{company}}'s site and your Meta ad library before recording this.</p>"
             "<p style='margin:0 0 0.6rem 0;'>You're running {{product_category}} creatives focused on {{creative_angle}}. The creative is strong.</p>"
-            "<p style='margin:0 0 0.6rem 0;'>What I don't see is a testing framework behind it — a way to know which angles are driving pipeline for your new {{new_hire_role}} in the first 90 days.</p>"
-            "<p style='margin:0 0 0.6rem 0;'>That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, and iteration loop. So your team can optimize from signal, not guesswork.</p>"
-            "<p style='margin:0;'>I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for {{company}} — 20 minutes, no pitch deck.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>What I don't see is the testing framework behind it — no system to ship 30–50 fresh concepts per month, kill the ones that fatigue in 5 days, and scale the ones that hold ROAS. Right now it looks like you're rotating maybe 5–8 ads — which works at $20K/mo spend but breaks the moment you try to scale to $200K.</p>"
+            "<p style='margin:0 0 0.6rem 0;'>That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, iteration loop. So your new {{new_hire_role}} inherits a creative engine that ships at the velocity your ad budget demands.</p>"
+            "<p style='margin:0;'>I'll drop two case study links in the email below — one in your category, one a stretch. Happy to walk you through what the first 30 days looks like for {{company}} — 20 minutes, no pitch deck.</p>"
         )
         st.markdown(
             f'<div style="color:#000000;background:#FFFFFF;'
@@ -624,7 +628,7 @@ with tabs[2]:
             st.markdown(f'<div style="font-family:\'JetBrains Mono\',monospace;font-size:0.78rem;padding:0.35rem 0;border-bottom:1px solid #ddd;color:#000;"><span style="font-weight:800;">{str(i).zfill(2)}</span>  {step}</div>', unsafe_allow_html=True)
 
         st.markdown("### FULL-FUNNEL REPORTING")
-        st.markdown('<div class="wiring">OUTBOUND TOUCH → REPLY → MEETING BOOKED → DEAL CREATED → REVENUE CLOSED</div>', unsafe_allow_html=True)
+        st.markdown('<div class="wiring">OUTBOUND TOUCH → REPLY → DISCOVERY CALL BOOKED → PROPOSAL → ENGAGEMENT SIGNED → CASE STUDY WON</div>', unsafe_allow_html=True)
         st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.78rem;color:#555;line-height:1.7;">Outbound-influenced signups captured even when the contact did not reply. Silent conversions tracked via RB2B post-email site visit.</p>', unsafe_allow_html=True)
 
         st.markdown("### SCALABILITY")
@@ -655,7 +659,7 @@ with tabs[3]:
         ("LINKEDIN OUTREACH",     "HEYREACH",                            "CONNECTION REQUESTS, DM SEQUENCES, COMMENT ENGAGEMENT"),
         ("VIDEO",                 "LOOM",                                "PERSONALIZED 60-90S VIDEOS FOR T1 ACCOUNTS"),
         ("ORCHESTRATION",         "N8N",                                 "WEBHOOKS, ROUTING LOGIC, CRM SYNC, DEAD LETTER QUEUE"),
-        ("GTM ANALYTICS",         "DEEPLINE CLI",                        "OUTBOUND ANALYTICS, SEQUENCE PERFORMANCE, PIPELINE ATTRIBUTION REPORTING"),
+        ("GTM ANALYTICS",         "DEEPLINE CLI",                        "OUTBOUND ANALYTICS, SEQUENCE PERFORMANCE, REPLY → MEETING ATTRIBUTION"),
         ("CRM",                   "HUBSPOT",                             "CONTACT MANAGEMENT, DEAL CREATION, ATTRIBUTION, REPORTING"),
         ("ALERTS",                "SLACK",                               "REAL-TIME REPLY ALERTS, DELIVERABILITY FLAGS, WEEKLY MONDAY REPORT"),
     ]
