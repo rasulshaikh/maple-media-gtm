@@ -248,6 +248,44 @@ a { color: #000 !important; text-decoration: underline; }
 code { background: #000 !important; color: #FFF !important; font-family: 'JetBrains Mono', monospace !important; padding: 1px 5px; }
 blockquote { border-left: 4px solid #000; padding: 0.5em 1em; margin: 0.8em 0; color: #000 !important; }
 
+/* ── NATIVE TEXT BLOCKS (st.text, st.code) ── */
+.stText, .stCode {
+    border: 2px solid #000 !important;
+    box-shadow: 4px 4px 0 0 #000 !important;
+    background: #FFF !important;
+    padding: 0 !important;
+}
+.stText pre, .stCode pre,
+.stText div[data-testid="stMarkdownContainer"] pre,
+div[data-testid="stText"] pre {
+    font-family: 'JetBrains Mono', monospace !important;
+    font-size: 0.82rem !important;
+    line-height: 1.85 !important;
+    color: #000 !important;
+    background: #FFF !important;
+    padding: 1rem 1.2rem !important;
+    white-space: pre-wrap !important;
+    border-radius: 0 !important;
+    margin: 0 !important;
+}
+div[data-testid="stText"] {
+    background: #FFF !important;
+    border: 2px solid #000 !important;
+    box-shadow: 4px 4px 0 0 #000 !important;
+}
+div[data-testid="stText"] > div,
+div[data-testid="stText"] > div > div,
+div[data-testid="stText"] p,
+div[data-testid="stText"] pre,
+div[data-testid="stText"] code {
+    font-family: 'JetBrains Mono', monospace !important;
+    color: #000 !important;
+    background: #FFF !important;
+    padding: 1rem 1.2rem !important;
+    margin: 0 !important;
+    white-space: pre-wrap !important;
+}
+
 footer { visibility: hidden; }
 #MainMenu { visibility: hidden; }
 </style>
@@ -295,7 +333,7 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.markdown('<div class="ph">WHAT GETS BUILT</div>', unsafe_allow_html=True)
 st.markdown('<p style="font-family:\'JetBrains Mono\',monospace;font-size:0.85rem;line-height:1.85;color:#000;max-width:72ch;">A three-layer GTM engine that runs continuously and compounds over time. Not a campaign — a system. Every layer feeds the next: intelligence drives outreach, outreach generates data, data sharpens targeting. After 60 days the system knows exactly which DTC founder profile, at which growth stage, responding to which signal, converts. That intelligence lives in HubSpot — not in a spreadsheet.</p>', unsafe_allow_html=True)
 
-tabs = st.tabs(["01 INTELLIGENCE", "02 OUTBOUND", "03 ATTRIBUTION", "04 TOOL STACK", "05 PORTFOLIO WIRING", "06 EMAIL"])
+tabs = st.tabs(["01 INTELLIGENCE", "02 OUTBOUND", "03 ATTRIBUTION", "04 TOOL STACK", "05 PORTFOLIO WIRING"])
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 01 INTELLIGENCE
@@ -464,7 +502,7 @@ If not, no worries at all."""
         for label, subject, body in emails:
             st.markdown(f'<span class="sig-label">{label}</span>', unsafe_allow_html=True)
             st.markdown(f"**SUBJECT:** {subject}")
-            st.markdown(f'<div class="email-body">{body}</div>', unsafe_allow_html=True)
+            st.text(body)
 
     # Channel 2
     st.markdown('<div class="ph" style="margin-top:1.5rem;">CH-02 / LINKEDIN / HEYREACH</div>', unsafe_allow_html=True)
@@ -498,7 +536,7 @@ Happy to share what's been working if that's useful."""),
         ]
         for label, body in dms:
             st.markdown(f'<span class="sig-label">{label}</span>', unsafe_allow_html=True)
-            st.markdown(f'<div class="email-body">{body}</div>', unsafe_allow_html=True)
+            st.text(body)
 
     # Channel 3
     st.markdown('<div class="ph" style="margin-top:1.5rem;">CH-03 / VIDEO / LOOM / T1 TOP 50</div>', unsafe_allow_html=True)
@@ -507,7 +545,7 @@ Happy to share what's been working if that's useful."""),
 
     with st.expander("VIEW LOOM SCRIPT"):
         st.markdown("*FORMAT: 60-90 SECONDS. SCREEN SHARE OF THEIR WEBSITE. SPECIFIC TO THEIR CREATIVE STACK.*")
-        st.markdown(f"""<div class="email-body">Hey [First Name] — I pulled [Company]'s site before recording this.
+        loom_script = """Hey [First Name] — I pulled [Company]'s site before recording this.
 
 You're running [product category] creatives focused on [angle — social proof / founder story / UGC]. The creative is strong.
 
@@ -515,7 +553,8 @@ What I don't see is a testing framework behind it — a way to know which angles
 
 That's exactly what Maple Media builds. Not a one-off audit. A repeatable system: research, concept structure, testing cadence, and iteration loop. So your team can optimize from signal, not guesswork.
 
-I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for [Company] — 20 minutes, no pitch deck.</div>""", unsafe_allow_html=True)
+I'll drop two case study links in the email below. Happy to walk you through what the first 30 days looks like for [Company] — 20 minutes, no pitch deck."""
+        st.text(loom_script)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 # 03 ATTRIBUTION
@@ -644,72 +683,5 @@ with tabs[4]:
         st.markdown("<hr style='margin:0.2rem 0;border:none;border-top:1px solid #ddd;'>", unsafe_allow_html=True)
 
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-# 06 EMAIL
+# END — Email follow-up template is sent via email, not shown in the app.
 # ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-with tabs[5]:
-    st.markdown('<div class="ph">THE EMAIL — FOLLOW-UP VERSION</div>', unsafe_allow_html=True)
-    st.markdown("*Send after an initial call. This is the full written breakdown.*")
-
-    st.markdown('<span class="sig-label">SUBJECT LINE</span>', unsafe_allow_html=True)
-    st.markdown("GTM plan for Maple Media — tools, channels, and wiring")
-
-    st.markdown('<span class="sig-label">BODY</span>', unsafe_allow_html=True)
-    st.markdown("""<div class="email-body">Hey [Name],
-
-Good talking. Here's the full GTM plan — tool stack, channel selection, copy examples, and how everything is wired together.
-
---- PHASE 1: INTELLIGENCE (WEEKS 1-2) ---
-
-ICP scoring table in Clay across 5 dimensions: GMV tier, ad spend category, tech stack (Shopify, Klaviyo, Triple Whale detection via TheirStack), headcount, and live growth signal. Every contact gets a 0-100 AI lead score before anything sends. Anything below a grade B is blocked from ever touching your sending domains.
-
-Signals tracked for your ICP: new CMO / head of growth hired (last 30 days), round raised, attribution tool switch, negative agency review on G2 or Clutch, North American market expansion, LinkedIn content engagement on creative or ROAS posts.
-
---- PHASE 2: OUTBOUND ON 3 CHANNELS (WEEKS 3-5) ---
-
-Cold email via Smartlead (50+ sending domain fleet):
-  - Signal-led sequences — every email references the specific trigger that fired it
-  - 3 copy angles: creative attribution gap, competitor visibility, North American market entry
-  - E1 x 3 variants, E2 x 2 variants, 10 subject lines rotated by company hash
-  - 80-word gate — nothing sends over 80 words
-
-LinkedIn via HeyReach (T1 accounts):
-  - Post engagement D1, connection request D3, DM D5 (one question, no pitch), email lands D8
-  - Follower play: ICP-filtered in Clay within 24h, warm outreach same day
-
-Video / Loom (top 50 T1 accounts per month):
-  - 60-90 seconds, specific to their website and creative stack
-  - Fires on new CMO hire, round raised, or 3+ touches without reply
-  - Linked in email as P.S.
-
---- PHASE 3: ATTRIBUTION + ITERATION (ONGOING) ---
-
-Every touch across all 3 channels logged in HubSpot. Weekly loop: which signals and copy angles generated meetings — feeds back into ICP scoring weights. Infrastructure cost stays flat. Output scales.
-
---- FULL TOOL STACK ---
-
-Clay | Apollo | Findymail + Prospeo | ZeroBounce | Smartlead (50-domain fleet) | HeyReach | Loom | n8n | Deepline CLI | HubSpot | TheirStack | Trigify | RB2B | Slack
-
---- PORTFOLIO ---
-
-All 20 workflows live with steps, metrics, and copy examples:
-rasulshaikh.github.io/gtm-portfolio/
-
-RemoteState case study (Forward Deployed GTM Engineer — $180K ARR in 6 months, worked with existing clients on GTM opportunities) and FalconWise case study (ABM engine, 10+ SQLs/mo) are both downloadable from the portfolio.
-
---- PRICING ---
-
-$30/hr | $4,000/mo | $10,000/quarter
-(Full Phase 1-3 build + documented playbook you own at the end)
-
-Happy to walk through the specific workflows that map to your setup in 30 minutes, or send a scoped Phase 1 proposal to start with infrastructure.
-
-Rasul</div>""", unsafe_allow_html=True)
-
-    st.markdown('<span class="sig-label">SEND ORDER</span>', unsafe_allow_html=True)
-    for i, step in enumerate([
-        "SEND COLD VERSION IF NO PRIOR CONTACT",
-        "AFTER THEY RESPOND — SEND THIS FOLLOW-UP WITH THE PLAN LINK",
-        "SHARE THIS STREAMLIT URL DIRECTLY — NO PDF NEEDED",
-        "RECORD A 90-SECOND LOOM OF THEIR WEBSITE BEFORE THE CALL",
-    ], 1):
-        st.markdown(f'<div style="font-family:\'JetBrains Mono\',monospace;font-size:0.78rem;padding:0.35rem 0;border-bottom:1px solid #ddd;color:#000;"><span style="font-weight:800;">{str(i).zfill(2)}</span>  {step}</div>', unsafe_allow_html=True)
