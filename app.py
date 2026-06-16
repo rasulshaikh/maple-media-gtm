@@ -1,5 +1,13 @@
 import streamlit as st
 
+# ── URL CONSTANTS (update here if any of these change) ─────────────────────────
+LINKEDIN_URL = "https://www.linkedin.com/in/rasulshaikh/"
+GITHUB_URL   = "https://github.com/rasulshaikh"
+PORTFOLIO_URL = "https://rasulshaikh.github.io/gtm-portfolio/"
+MAPLE_URL    = "https://wearemaplemedia.com"
+MAPLE_YT_URL = "https://www.youtube.com/@maplemediallc"
+MAPLE_CASES_INDEX = "https://wearemaplemedia.com/case-studies/"
+
 st.set_page_config(
     page_title="Maple Media — GTM Engine",
     page_icon="▣",
@@ -312,7 +320,13 @@ footer { visibility: hidden; }
 
 # ── SIDEBAR ───────────────────────────────────────────────────────────────────
 with st.sidebar:
-    st.markdown("### RASUL SHAIKH")
+    st.markdown(
+        f'<a href="{LINKEDIN_URL}" target="_blank" rel="noopener" '
+        f'style="font-family:\'JetBrains Mono\',monospace;font-size:1.05rem;font-weight:800;'
+        f'color:#FFF !important;text-transform:uppercase;letter-spacing:0.1em;'
+        f'text-decoration:underline;display:block;margin-bottom:0.1rem;">RASUL SHAIKH ↗</a>',
+        unsafe_allow_html=True
+    )
     st.markdown("GTM ENGINEER")
     st.markdown("---")
     st.markdown("**PRICING**")
@@ -334,13 +348,20 @@ with st.sidebar:
     st.markdown("150+ BRANDS")
     st.markdown("07 PUBLIC CASES")
     st.markdown("10 BLOG POSTS")
-    st.markdown("[wearemaplemedia.com](https://wearemaplemedia.com)")
+    st.markdown(f"[wearemaplemedia.com]({MAPLE_URL})")
     st.markdown("---")
-    st.markdown("**PORTFOLIO**")
-    st.markdown("[rasulshaikh.github.io/gtm-portfolio](https://rasulshaikh.github.io/gtm-portfolio/)")
-    st.markdown("[github.com/rasulshaikh](https://github.com/rasulshaikh)")
+    st.markdown("**LINKS**")
+    st.markdown(f"[linkedin.com/in/rasulshaikh ↗]({LINKEDIN_URL})")
+    st.markdown(f"[rasulshaikh.github.io/gtm-portfolio ↗]({PORTFOLIO_URL})")
+    st.markdown(f"[github.com/rasulshaikh ↗]({GITHUB_URL})")
     st.markdown("---")
-    st.markdown("RASUL SHAIKH")
+    st.markdown(
+        f'<a href="{LINKEDIN_URL}" target="_blank" rel="noopener" '
+        f'style="font-family:\'JetBrains Mono\',monospace;font-size:0.75rem;font-weight:700;'
+        f'color:#FFF !important;text-transform:uppercase;letter-spacing:0.1em;'
+        f'text-decoration:underline;">RASUL SHAIKH ↗</a>',
+        unsafe_allow_html=True
+    )
 
 # ── HEADER ────────────────────────────────────────────────────────────────────
 st.markdown("<h1>MAPLE MEDIA GTM ENGINE</h1>", unsafe_allow_html=True)
